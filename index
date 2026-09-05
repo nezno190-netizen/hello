@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch Video</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    video {
+      width: min(100%, 900px);
+      height: auto;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <video id="video" controls playsinline preload="metadata">
+    <source src="https://cdn.slicedrv.com/skEIvcWf1.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <script>
+    const video = document.getElementById("video");
+
+    // GANTI URL DI BAWAH INI dengan link tujuan kamu.
+    const targetUrl = "https://t.co/PhqGX8wxOY";
+
+    video.addEventListener("click", function(event) {
+      // Agar tombol kontrol video tetap dapat digunakan.
+      if (event.target === video && video.paused) {
+        window.location.href = targetUrl;
+      }
+    });
+  </script>
+
+</body>
+</html>
